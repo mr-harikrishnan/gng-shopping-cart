@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.product-container,.cart-conatiner{
+    scrollbar-width: none;     /* Firefox */
+}
