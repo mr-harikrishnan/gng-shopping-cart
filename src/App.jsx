@@ -31,7 +31,7 @@ function App() {
   const addToCartProduct = (product) => {
     console.log(product);
     setCart([...cart, product]);
-    setTotal(Math.round(total + product.price));
+    setTotal(Math.round(total + parseInt(product.price)));
   };
 
   const removeCart = (product) => {
