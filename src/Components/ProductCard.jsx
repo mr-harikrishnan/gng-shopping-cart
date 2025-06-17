@@ -19,7 +19,7 @@ function ProductCard({ productData, addToCartProductFunction, cart }) {
                     Price : {productData.price}/-
                 </p>
                 <p className="mb-3 font-snormal  text-gray-400 dark:text-gray-400">
-                    rating : {productData.rating}/-
+                    rating : {productData.rating}4.5/-
                 </p>
             </div>
 

@@ -1,7 +1,8 @@
 import ProductCard from "./Components/ProductCard";
 import CartCard from "./Components/CartCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import productJSONData from "./Const/ProductJSONData.json";
+import axios from "axios";
 
 function App() {
   // CART-OPEN-CLOSE-FUNCTIONS-START
@@ -39,7 +40,23 @@ function App() {
     setTotal(Math.round(total - product.price));
   };
 
-  const products = productJSONData;
+  const [products, setProducts] = useState([])
+
+  let getProduct = async () => {
+    try {
+      const colectedProduct = await axios.get("https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products")
+    setProducts(colectedProduct.data)
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+  useEffect(()=>{
+    getProduct()
+  })
+
+  // const products = productJSONData;
 
   return (
     <div className="w-full h-[100vh] flex relative">
